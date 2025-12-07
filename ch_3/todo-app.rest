@@ -1,0 +1,28 @@
+### GET '/'
+GET http://localhost:7777
+
+### Register a new user POST /auth/login
+POST http://localhost:7777/auth/register
+Content-Type: application/json
+
+{
+  "username": "chris",
+  "password": "mypass"
+}
+
+### Login a new user POST /auth/login
+POST http://localhost:7777/auth/login
+Content-Type: application/json
+
+{
+  "username": "chris",
+  "password": "mypass"
+}
+
+###
+
+
+###
+
+
+###
