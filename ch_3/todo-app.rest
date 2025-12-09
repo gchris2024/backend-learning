@@ -1,7 +1,7 @@
 ### GET '/'
 GET http://localhost:7777
 
-### Register a new user POST /auth/login
+### Register a new user POST /auth/register
 POST http://localhost:7777/auth/register
 Content-Type: application/json
 
