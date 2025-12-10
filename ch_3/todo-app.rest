@@ -1,16 +1,16 @@
 ### GET '/'
 GET http://localhost:7777
 
-### Register a new user POST /auth/register
+### Register a new user -- POST /auth/register
 POST http://localhost:7777/auth/register
 Content-Type: application/json
 
 {
   "username": "chris",
-  "password": "mypass"
+  "password": "mypass2"
 }
 
-### Login a new user POST /auth/login
+### Login a new user -- POST /auth/login
 POST http://localhost:7777/auth/login
 Content-Type: application/json
 
@@ -19,10 +19,30 @@ Content-Type: application/json
   "password": "mypass"
 }
 
-###
+### Fetch all todos -- GET /todos (protected)
+GET http://localhost:7777/todos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzY1MzQxNjE4LCJleHAiOjE3NjU0MjgwMTh9.TDC-E2IZ4Ml8ZVXUqVjBW2g6tacO9f0sr46de17SnFA
 
 
-###
+### Creates a new todo -- POST /todos (protected)
+POST http://localhost:7777/todos
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzY1MzQxNjE4LCJleHAiOjE3NjU0MjgwMTh9.TDC-E2IZ4Ml8ZVXUqVjBW2g6tacO9f0sr46de17SnFA
 
+{
+  "task": "Finish coding these projects"
+}
 
-###
+### Update a todo -- PUT /todos/:id (protected)
+PUT http://localhost:7777/todos/2?page=4 
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzY1MzQxNjE4LCJleHAiOjE3NjU0MjgwMTh9.TDC-E2IZ4Ml8ZVXUqVjBW2g6tacO9f0sr46de17SnFA
+
+{
+  "completed": 1
+}
+
+### Delete a todo -- DELETE /todos/:id (protected)
+DELETE http://localhost:7777/todos/2 
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzY1MzQxNjE4LCJleHAiOjE3NjU0MjgwMTh9.TDC-E2IZ4Ml8ZVXUqVjBW2g6tacO9f0sr46de17SnFA

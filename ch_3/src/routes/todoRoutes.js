@@ -14,12 +14,37 @@ router.get('/', (req, res) => {
 })
 
 // Create a new todo
-router.post('/', (req, res) => { })
+router.post('/', (req, res) => { 
+  const { task } = req.body
+  const insertTodo = db.prepare(`INSERT INTO todos (user_id, task)
+                                 VALUES (?, ?)`)
+  const result = insertTodo.run(req.userId, task)
+
+  // respond with new task
+  res.json({id: result.lastInsertRowid, task, completed: 0})
+})
 
 // Update a todo
-router.put('/:id', (req, res) => { })
+router.put('/:id', (req, res) => { 
+  const { completed } = req.body
+  const { id } = req.params
+  const { page } = req.query // `?page=4`
+  
+  const updatedTodo = db.prepare(`UPDATE todos SET completed_status = ? WHERE id = ?`)
+  updatedTodo.run(completed, id)
+
+  res.json({message: "Todo completed"})
+})
 
 // Delete a todo
-router.delete('/:id', (req, res) => { })
+router.delete('/:id', (req, res) => { 
+  const { id } = req.params
+  const userId = req.userId
+
+  // making sure the todo is getting deleted only if it associated with a certain user
+  const deleteTodo = db.prepare(`DELETE FROM todos WHERE id = ? AND user_id = ?`)
+
+  deleteTodo.run(id, userId)
+})
 
 export default router
