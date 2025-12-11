@@ -30,7 +30,7 @@ router.put('/:id', (req, res) => {
   const { id } = req.params
   const { page } = req.query // `?page=4`
   
-  const updatedTodo = db.prepare(`UPDATE todos SET completed_status = ? WHERE id = ?`)
+  const updatedTodo = db.prepare(`UPDATE todos SET completed = ? WHERE id = ?`)
   updatedTodo.run(completed, id)
 
   res.json({message: "Todo completed"})
@@ -45,6 +45,7 @@ router.delete('/:id', (req, res) => {
   const deleteTodo = db.prepare(`DELETE FROM todos WHERE id = ? AND user_id = ?`)
 
   deleteTodo.run(id, userId)
+  res.send({message: "Todo deleted"})
 })
 
 export default router

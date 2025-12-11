@@ -7,7 +7,7 @@ Content-Type: application/json
 
 {
   "username": "chris",
-  "password": "mypass2"
+  "password": "mypass"
 }
 
 ### Login a new user -- POST /auth/login
@@ -21,13 +21,13 @@ Content-Type: application/json
 
 ### Fetch all todos -- GET /todos (protected)
 GET http://localhost:7777/todos
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzY1MzQxNjE4LCJleHAiOjE3NjU0MjgwMTh9.TDC-E2IZ4Ml8ZVXUqVjBW2g6tacO9f0sr46de17SnFA
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzY1NDIxNjE0LCJleHAiOjE3NjU1MDgwMTR9.o5_glrZmoPT040hTxks0e9xO0huWls36p71QLNVfc6A
 
 
 ### Creates a new todo -- POST /todos (protected)
 POST http://localhost:7777/todos
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzY1MzQxNjE4LCJleHAiOjE3NjU0MjgwMTh9.TDC-E2IZ4Ml8ZVXUqVjBW2g6tacO9f0sr46de17SnFA
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzY1NDIxNjE0LCJleHAiOjE3NjU1MDgwMTR9.o5_glrZmoPT040hTxks0e9xO0huWls36p71QLNVfc6A
 
 {
   "task": "Finish coding these projects"
@@ -36,7 +36,7 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzY1MzQx
 ### Update a todo -- PUT /todos/:id (protected)
 PUT http://localhost:7777/todos/2?page=4 
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzY1MzQxNjE4LCJleHAiOjE3NjU0MjgwMTh9.TDC-E2IZ4Ml8ZVXUqVjBW2g6tacO9f0sr46de17SnFA
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzY1NDIxNjE0LCJleHAiOjE3NjU1MDgwMTR9.o5_glrZmoPT040hTxks0e9xO0huWls36p71QLNVfc6A
 
 {
   "completed": 1
@@ -45,4 +45,4 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzY1MzQx
 ### Delete a todo -- DELETE /todos/:id (protected)
 DELETE http://localhost:7777/todos/2 
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzY1MzQxNjE4LCJleHAiOjE3NjU0MjgwMTh9.TDC-E2IZ4Ml8ZVXUqVjBW2g6tacO9f0sr46de17SnFA
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzY1NDIxNjE0LCJleHAiOjE3NjU1MDgwMTR9.o5_glrZmoPT040hTxks0e9xO0huWls36p71QLNVfc6A
