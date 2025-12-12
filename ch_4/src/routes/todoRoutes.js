@@ -1,5 +1,4 @@
 import express from 'express'
-import db from '../db.js'
 import prisma from '../prismaClient.js'
 
 const router = express.Router()
@@ -62,7 +61,7 @@ router.delete('/:id', async (req, res) => {
       userId
     }
   })
-  
+
   res.send({message: "Todo deleted"})
 })
 

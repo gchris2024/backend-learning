@@ -1,7 +1,6 @@
 import express from "express";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import db from "../db.js";
 import prisma from "../prismaClient.js";
 
 // "subsection"
@@ -55,9 +54,9 @@ router.post("/login", async (req, res) => {
     // find unique user
     const user = await prisma.user.findUnique({
       where: {
-        username: username
-      }
-    })
+        username: username,
+      },
+    });
 
     // exit if we have no user with that username
     if (!user) {

@@ -1,3 +1,5 @@
+/* swapped out for Postgres */
+
 import {DatabaseSync} from 'node:sqlite'
 
 // this db ceases to exist when db connection is closed--for quick prototyping
