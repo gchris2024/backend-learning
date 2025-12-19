@@ -13,9 +13,6 @@ RUN npm install
 # Copy the rest of the application code [source=., dest=/app]
 COPY . .
 
-# Generate Prisma client INSIDE Docker during build
-# RUN npx prisma generate
-
 # Expose the port that the app runs on
 EXPOSE 7777
 

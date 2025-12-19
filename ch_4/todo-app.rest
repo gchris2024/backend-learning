@@ -6,7 +6,7 @@ POST http://localhost:7777/auth/register
 Content-Type: application/json
 
 {
-  "username": "chris",
+  "username": "chris@chris.com",
   "password": "mypass"
 }
 
